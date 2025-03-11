@@ -12,10 +12,18 @@ Scenario: login with valid credentials
 	And User clicks add to cart button
 	And User clicks Cart Icon
 	Then Item added to cart should display
+
+	When User clicks checkout button
+	And User enters "<firstname>", "<lastname>", and "<zipcode>"
+	Then Then Clicks on Continue
+
+	When User clicks on Finish
+    Then Order status should be visible
 	
 Examples:
  
-| username       | password      |
+| username       | password      |  firstname | lastname | zipcode |
  
-| standard_user | secret_sauce |
+| standard_user | secret_sauce | uma    | shankari    | 123456 |
+
 
